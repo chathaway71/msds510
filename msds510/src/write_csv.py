@@ -1,11 +1,11 @@
 import sys
 import csv
 
-
+#create function to clean up names
 def python_friendly_name(name):
     return name.lower().replace(' ', '_').replace('/', '_').replace('?', '')
 
-
+#create function to create dictionary
 def main(input_csv, output_csv):
     with open(input_csv) as f:
         csv_reader = csv.DictReader(f)
@@ -20,7 +20,7 @@ def main(input_csv, output_csv):
         csv_writer.writeheader()
         csv_writer.writerows(new_records)
 
-
+#create weird function
 if __name__ == '__main__':
     args = sys.argv
     if len(args) < 3:
